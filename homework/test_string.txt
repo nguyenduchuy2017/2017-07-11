@@ -1,0 +1,79 @@
+the  the the Now we’ll do even more typing of variables and printing them out. This time we’ll use some-
+thing called a “format string.” Every time you put " (double- quotes) around a piece of text,
+you have been making a string. A string is how you make something that your program might
+give to a human. You print them, save them to fi les, send them to web servers, all sorts of things.
+Strings are really handy, so in this exercise you will learn how to make strings that have variables
+embedded in them. You embed variables inside a string by using specialized format sequences
+and then putting the variables at the end with a special syntax that tells Python, “Hey, this is a
+format string, put these variables in there.”
+As usual, just type this in even if you do not understand it and make it exactly the same.
+ex5.py
+
+my_name = 'Zed A. Shaw'
+my_age = 35 # not a lie
+my_height = 74 # inches
+my_weight = 180 # lbs
+my_eyes = 'Blue'
+my_teeth = 'White'
+my_hair = 'Brown'
+
+"Let's talk about %s." % my_name
+"He's %d inches tall." % my_height
+"He's %d pounds heavy." % my_weight
+"Actually that's not too heavy."
+"He's got %s eyes and %s hair." % (my_eyes, my_hair)
+"His teeth are usually %s depending on the coffee." % my_teeth
+# this line is tricky, try to get it exactly right
+print "If I add %d, %d, and %d I get %d." % (
+my_age, my_height, my_weight, my_age + my_height + my_weight)
+
+WARNING! Remember to put # - - coding: utf- 8 - - at the top if you use non-
+ASCII characters and get an encoding error.
+
+He's 180 pounds heavy.
+Actually that's not too heavy.
+He's got Blue eyes and Brown hair.
+His teeth are usually White depending on the coffee.
+If I add 35, 74, and 180 I get 289.
+Study Drills
+1. Change all the variables so there isn’t the my_ in front. Make sure you change the name
+everywhere, not just where you used = to set them.
+2. Try more format characters. %r is a very useful one. It’s like saying “print this no matter
+what.”
+3. Search online for all the Python format characters.
+4. Try to write some variables that convert the inches and pounds to centimeters and kilos.
+Do not just type in the measurements. Work out the math in Python.
+Common Student Questions
+Can I make a variable like this: 1 = 'Zed Shaw'?
+No, the 1 is not a valid variable name. They need to start with a character, so a1 would work, but
+1 will not.
+What does %s, %r, and %d do again?
+You’ll learn more about this as you continue, but they are “formatters.” They tell Python to take
+the variable on the right and put it in to replace the %s with its value.
+I don’t get it, what is a “formatter”? Huh?
+The problem with teaching you programming is that to understand many of my descriptions, you
+need to know how to do programming already. The way I solve this is I make you do something,
+and then I explain it later. When you run into these kinds of questions, write them down and see
+if I explain it later.
+How can I round a fl oating point number?
+You can use the round() function like this: round(1.7333).
+I get this error TypeError: 'str' object is not callable.
+You probably forgot the % between the string and the list of variables.
+Why does this not make sense to me?
+Try making the numbers in this script your measurements. It’s weird, but talking about yourself
+will make it seem more real.
+
+x = "There are %d types of people." % 10
+binary = "binary"
+do_not = "don't"
+y = "Those who know %s and those who %s." % (binary, do_not)
+print x
+print y
+print "I said: %r." % x
+print "I also said: '%s'." % y
+hilarious = False
+joke_evaluation = "Isn't that joke so funny?! %r"
+print joke_evaluation % hilarious
+w = "This is the left side of..."
+e = "a string with a right side."
+print w + e
